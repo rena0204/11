@@ -1,20 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void swap(int *x, int *y)
-{
-	int temp;
-	temp=*x;
-	*x=*y;
-	*y=temp;
-}
+int main(void){
+ int i = 100; 
+ int *p = &i; 
+ int **q = &p;	
 
-int main(int argc, char *argv[]) {
-	
-	int a=3, b=5;
-	
-	swap(&a,&b);
-	printf("a:%i, b:%i\n",a,b);
+ *p = 200; 
+ printf("i=%d, *p=%d, **q=%d\n", i, *p, **q); 
 
-	return 0;
+ **q = 300; 
+ printf("i=%d, *p=%d, **q=%d\n", i, *p, **q);
+
+return 0;
 }
